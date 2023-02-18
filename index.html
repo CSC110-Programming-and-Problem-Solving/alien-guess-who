@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Alien Guess Who</title>
+	<meta name="description" content="Alien Guess Who">
+	<meta name="Alex Thimineur" content="CS110 Lab">
+</head>
+
+<body>
+	<div name="row1">
+		<img id="jason" src="images/jason.png" alt="Jason" onclick="showToggle('jason', 0)">
+		<img id="violet" src="images/violet.png" alt="Violet" onclick="showToggle('violet', 1)">
+		<img id="bernie" src="images/bernie.png" alt="Bernie" onclick="showToggle('bernie', 2)">
+		<img id="lawrence" src="images/lawrence.png" alt="Lawrence" onclick="showToggle('lawrence', 3)">
+		<img id="edith" src="images/edith.png" alt="Edith" onclick="showToggle('edith', 4)">
+		<img id="umberto" src="images/umberto.png" alt="Umberto" onclick="showToggle('umberto', 5)">
+	</div>
+	
+	<div name="row2">
+		<img id="eve" src="images/eve.png" alt="Eve" onclick="showToggle('eve', 6)">
+		<img id="walter" src="images/walter.png" alt="Walter" onclick="showToggle('walter', 7)">
+		<img id="telly" src="images/telly.png" alt="Telly" onclick="showToggle('telly', 8)">
+		<img id="opus" src="images/opus.png" alt="Opus" onclick="showToggle('opus', 9)">
+		<img id="zed" src="images/zed.png" alt="Zed" onclick="showToggle('zed', 10)">
+		<img id="petrovo" src="images/petrovo.png" alt="Petrovo" onclick="showToggle('petrovo', 11)">
+	</div>
+	
+	<div name="row3">
+		<img id="richard" src="images/richard.png" alt="Richard" onclick="showToggle('richard', 12)">
+		<img id="celia" src="images/celia.png" alt="Celia" onclick="showToggle('celia', 13)">
+		<img id="hakem" src="images/hakem.png" alt="Hakem" onclick="showToggle('hakem', 14)">
+		<img id="boris" src="images/boris.png" alt="Boris" onclick="showToggle('boris', 15)">
+		<img id="albert" src="images/albert.png" alt="Albert" onclick="showToggle('albert', 16)">
+		<img id="gina" src="images/gina.png" alt="Gina" onclick="showToggle('gina', 17)">
+	</div>
+	
+	<div name="row4">
+		<img id="molly" src="images/molly.png" alt="Molly" onclick="showToggle('molly', 18)">
+		<img id="peter" src="images/peter.png" alt="Peter" onclick="showToggle('peter', 19)">
+		<img id="finnian" src="images/finnian.png" alt="Finnian" onclick="showToggle('finnian', 20)">
+		<img id="sam" src="images/sam.png" alt="Sam" onclick="showToggle('sam', 21)">
+		<img id="edgar" src="images/edgar.png" alt="Edgar" onclick="showToggle('edgar', 22)">
+		<img id="quill" src="images/quill.png" alt="Quill" onclick="showToggle('quill', 23)">
+	</div>
+	
+	<div name="colors">
+		<select onchange="changeColor(this.value)">
+			<option value="red">Red</option>
+			<option value="blue">Blue</option>
+			<option value="green">Green</option>
+			<option value="purple">Purple</option>
+			<option value="grey">Grey</option>
+		</select>
+	</div>
+	
+	<script>
+		let imageShowTracker = new Array(24).fill(true);
+		let color = "red";
+		function showToggle(id, index) {
+			let alienPicture = document.getElementById(id);
+
+			imageShowTracker[index] = !imageShowTracker[index];
+			if (imageShowTracker[index]) {
+				alienPicture.src = "images/" + id + ".png";
+			}
+			else {
+				alienPicture.src = "images/hidden_" + color + ".png";
+			}
+		}
+		
+		function changeColor(colorSelection) {
+			color = colorSelection.toLowerCase();
+		}
+	</script>
+</body>
+</html>
